@@ -1,16 +1,16 @@
 [server]
 host = localhost
 #report_host = 
-stratum_tcp_port = 50001
-stratum_http_port = 8081
-#stratum_tcp_ssl_port = 50002
-#stratum_http_ssl_port = 8082
-#report_stratum_tcp_port = 50001
+stratum_tcp_port = 60001
+stratum_http_port = 9081
+#stratum_tcp_ssl_port = 60002
+#stratum_http_ssl_port = 9082
+#report_stratum_tcp_port = 60001
 #report_stratum_http_port = 80
-#report_stratum_tcp_ssl_port = 50002
+#report_stratum_tcp_ssl_port = 60002
 #report_stratum_http_ssl_port = 443
 password = secret
-banner = Welcome to Electrum!
+banner = Welcome to LTCElectrum!
 irc = yes
 #irc_nick = <yournickname>
 #ssl_certfile = /path/to/electrum-server.crt
@@ -48,7 +48,7 @@ pruning_limit = 100
 
 [bitcoind]
 host = localhost
-port = 8332
+port = 9332
 # user and password from bitcoin.conf
 user = user
 password = password
