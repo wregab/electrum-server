@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "starting ltclectrum service"
+while [ "$?" == 0 ]
+do
+	./server.py
+	echo "restarting server in 5 seconds"
+	sleep 5
+done
+
