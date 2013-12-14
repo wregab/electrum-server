@@ -81,7 +81,10 @@ class BlockchainProcessor(Processor):
             traceback.print_exc(file=sys.stdout)
             print_log('initializing database')
             self.height = 0
-            self.last_hash = '12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2'
+	    if config.get('server','testnet')=='yes':
+            	self.last_hash = 'f5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f'
+	    else:
+		self.last_hash = '12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2'
             db_version = self.db_version
 
         # check version
