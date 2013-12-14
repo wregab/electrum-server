@@ -4,4 +4,6 @@
 .gitignore
 electrum.conf
 banner
-
+.project
+.pydevproject
+.settings

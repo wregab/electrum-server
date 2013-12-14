@@ -1,5 +1,6 @@
 [server]
-coin=litecoin
+coin = litecoin
+testnet = no
 host = localhost
 #report_host = 
 stratum_tcp_port = 60001

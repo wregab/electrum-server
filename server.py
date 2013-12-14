@@ -22,6 +22,7 @@ import sys
 import time
 import threading
 import traceback
+import utils
 
 import json
 
@@ -61,6 +62,7 @@ def create_config():
     config.set('server', 'irc_nick', '')
     config.set('server', 'coin', '')
     config.set('server', 'datadir', '')
+    config.set('server', 'testnet', 'no')
 
     # use leveldb as default
     config.set('server', 'backend', 'leveldb')

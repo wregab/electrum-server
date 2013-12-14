@@ -26,6 +26,18 @@ import hashlib
 import re
 import sys
 
+addrtype_litecoin_main=48
+addrtype_litecoin_testnet=111
+addrtype=addrtype_litecoin_main
+
+def init(config):
+	global addrtype
+	if config.get('server','testnet') == "yes":
+		addrtype=addrtype_litecoin_testnet
+	else:
+		addrtype=addrtype_litecoin_main
+
+
 __b58chars = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 __b58base = len(__b58chars)
 
@@ -107,7 +119,7 @@ def public_key_to_bc_address(public_key):
     return hash_160_to_bc_address(hash_160(public_key))
 
 
-def hash_160_to_bc_address(h160, addrtype = 0):
+def hash_160_to_bc_address(h160, addrtype = addrtype):
     if h160 == 'None':
         return 'None'
     vh160 = chr(addrtype) + h160
