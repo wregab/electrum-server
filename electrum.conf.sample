@@ -1,5 +1,6 @@
 [server]
 coin = litecoin
+#WARNING: to run testnet You also have to set addrtype to addrtype_litecoin_testnet in file utils/__init__.py
 testnet = no
 host = localhost
 #report_host = 
@@ -11,9 +12,10 @@ stratum_http_port = 9081
 #report_stratum_http_port = 80
 #report_stratum_tcp_ssl_port = 60002
 #report_stratum_http_ssl_port = 443
+#password to control this server:
 password = secret
-banner = Welcome to LTCElectrum!
-irc = no
+banner = Welcome to LTClectrum!
+irc = yes
 #irc_nick = <yournickname>
 #ssl_certfile = /path/to/electrum-server.crt
 #ssl_keyfile = /path/to/electrum-server.key
