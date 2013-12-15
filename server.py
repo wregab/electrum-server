@@ -43,7 +43,7 @@ def create_config():
     config = ConfigParser.ConfigParser()
     # set some defaults, which will be overwritten by the config file
     config.add_section('server')
-    config.set('server', 'banner', 'Welcome to Electrum!')
+    config.set('server', 'banner', 'Welcome to LTCLectrum!')
     config.set('server', 'host', 'localhost')
     config.set('server', 'report_host', '')
     config.set('server', 'stratum_tcp_port', '60001')
@@ -144,7 +144,7 @@ if __name__ == '__main__':
 
     try:
         import setproctitle
-        setproctitle.setproctitle('ElectrumServer')
+        setproctitle.setproctitle('LTCLectrumServer')
     except ImportError:
         println("Unable to rename process: python module setproctitle unavailable")
 
@@ -162,7 +162,7 @@ if __name__ == '__main__':
 
     for i in xrange(5):
         print ""
-    print_log("Starting Electrum server on", host)
+    print_log("Starting LTCLectrum server on", host)
 
     # Create hub
     dispatcher = Dispatcher(config)
@@ -206,4 +206,4 @@ if __name__ == '__main__':
         except:
             shared.stop()
 
-    print_log("Electrum Server stopped")
+    print_log("LTCLectrum Server stopped")
