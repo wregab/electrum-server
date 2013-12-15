@@ -41,6 +41,8 @@ class IrcThread(threading.Thread):
         if not self.nick:
             self.nick = Hash(self.host)[:5].encode("hex")
         self.prepend = 'L_'
+	if config.get('server','testnet')=='yes':
+	    self.prepend = 'M_'
         self.pruning = config.get('server', 'backend') == 'leveldb'
         if self.pruning:
             self.pruning_limit = config.get('leveldb', 'pruning_limit')
