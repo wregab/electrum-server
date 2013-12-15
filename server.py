@@ -69,7 +69,7 @@ def create_config():
     config.set('leveldb', 'pruning_limit', '100')
 
     for path in ('/etc/', ''):
-        filename = path + 'electrum.conf'
+        filename = path + 'ltclectrum.conf'
         attempt_read_config(config, filename)
 
     for bannerfile in ('banner','/etc/electrum.banner'):
