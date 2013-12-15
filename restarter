@@ -1,4 +1,5 @@
 #!/bin/bash
+#simple script for restarting server after hangups
 
 echo "starting ltclectrum service"
 while [ "$?" == 0 ]
