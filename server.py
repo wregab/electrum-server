@@ -88,6 +88,9 @@ def run_rpc_command(command, stratum_tcp_port):
         s.connect((host, int(stratum_tcp_port)))
     except:
         print "cannot connect to server."
+	if command == 'stop':
+	    sys.exit(0)
+	sys.exit(1)
         return
 
     method = 'server.' + command
