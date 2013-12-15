@@ -138,6 +138,12 @@ if __name__ == '__main__':
         run_rpc_command(sys.argv[1], stratum_tcp_port)
         sys.exit(0)
 
+    try:
+        import setproctitle
+        setproctitle.setproctitle('ElectrumServer')
+    except ImportError:
+        println("Unable to rename process: python module setproctitle unavailable")
+
     from processor import Dispatcher, print_log
     from backends.irc import ServerProcessor
 

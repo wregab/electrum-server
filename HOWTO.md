@@ -109,7 +109,7 @@ here are some pointers for Ubuntu:
     $ cd ~/src && wget http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.8.6/bitcoin-0.8.6-linux.tar.gz
     $ tar xfz bitcoin-0.8.6-linux.tar.gz
     $ cd bitcoin-0.8.6-linux/src/src
-    $ sudo apt-get install make g++ python-leveldb libboost-all-dev libssl-dev libdb++-dev 
+    $ sudo apt-get install make g++ python-leveldb libboost-all-dev libssl-dev libdb++-dev python-setproctitle
     $ make USE_UPNP= -f makefile.unix
     $ strip ~/src/bitcoin-0.8.6-linux/src/src/bitcoind
     $ ln -s ~/src/bitcoin-0.8.6-linux/src/src/bitcoind ~/bin/bitcoind
