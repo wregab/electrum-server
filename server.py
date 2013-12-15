@@ -72,11 +72,12 @@ def create_config():
         filename = path + 'electrum.conf'
         attempt_read_config(config, filename)
 
-    try:
-        with open('/etc/electrum.banner', 'r') as f:
-            config.set('server', 'banner', f.read())
-    except IOError:
-        pass
+    for bannerfile in ('banner','/etc/electrum.banner'):
+        try:
+            with open(bannerfile, 'r') as f:
+                config.set('server', 'banner', f.read())
+        except IOError:
+            pass
 
     return config
 
