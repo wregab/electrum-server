@@ -175,21 +175,23 @@ doesn't have the python-leveldb package.
 
 LTCLectrum server uses leveldb to store transactions. You can choose
 how many spent transactions per address you want to store on the server.
-The default is 100, but there are also servers with 1000 or even 10000.
-Few addresses have more than 10000 transactions. A limit this high
-can be considered to be equivalent to a "full" server. Full servers previously
-used abe to store the blockchain. The use of abe for ltclectrum servers is now
-deprecated.
 
-The pruning server uses leveldb and keeps a smaller and
-faster database by pruning spent transactions.
+In original Electrum server pruning limit for spent transactions 
+was set to 100 by default.
+Since litecoin has significantly less transactions than bitcoin,
+in LTCLectrum the default limit is 100000 - what should be considered
+an equivalent to "full" server.
+
+You can set this limit to lower number (100/1000/1000),
+although this doesn't have big impact on initial blockchain import time.
+The difference in database size shouldn't be big neither (TODO study).
 
 The section in the ltclectrum server configuration file (see step 10) looks like this:
 
      [leveldb]
      path = /path/to/your/database
      # for each address, history will be pruned if it is longer than this limit
-     pruning_limit = 100
+     pruning_limit = 100000
 
 ### Step 8. Import blockchain into the database or download it
 
@@ -209,15 +211,11 @@ on CPU speed, I/O speed and selected pruning limit.
 It's considerably faster to index in memory. You can use /dev/shm or
 or create a tmpfs which will also use swap if you run out of memory:
 
-    $ sudo mount -t tmpfs -o rw,nodev,nosuid,noatime,size=6000M,mode=0777 none /tmpfs
+    $ sudo mount -t tmpfs -o rw,nodev,nosuid,noatime,size=3000M,mode=0777 none /tmpfs
 
-Figures from April 2013:
-At limit 100 the database comes to 2,6 GB with 230k blocks and takes roughly 6h to import in /dev/shm.
-At limit 1000 the database comes to 3,0 GB with 230k blocks and takes roughly 10h to import in /dev/shm.
-At limit 10000 the database comes to 3,5 GB with 230k blocks and takes roughly 24h to import in /dev/shm.
+Figures from December 2013:
+At limit 100000 the database comes to 1.6 GB with 480k blocks
 
-As of November 2013 expect at least double the time for indexing the blockchain. Databases have grown to
-roughly 4 GB, give or take a few hundred MB between pruning limits 100 and 10000. 
 
 
 ### Step 9. Create a self-signed SSL cert
