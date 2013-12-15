@@ -1,16 +1,18 @@
-Electrum-server for the Electrum client
+LTCLectrum-server for the LTLectrum client
 =========================================
 
-  * Author: thomasv@bitcointalk
+This is litecoin port of Electrum server
+  * Electrum author: thomasv@bitcointalk
+  * Litecoin port author: nza@litecointalk
   * Language: Python
 
 Features
 --------
 
-  * The server uses a bitcoind and a leveldb backend.
+  * The server uses a litecoind and a leveldb backend.
   * The server code is open source. Anyone can run a server, removing single
     points of failure concerns.
-  * The server knows which set of Bitcoin addresses belong to the same wallet,
+  * The server knows which set of Litecoin addresses belong to the same wallet,
     which might raise concerns about anonymity. However, it should be possible
     to write clients capable of using several servers.
 
@@ -27,6 +29,6 @@ See the included `HOWTO.md` for greater detail on the installation process.
 License
 -------
 
-Electrum-server is made available under the terms of the [GNU Affero General
+LTCLectrum-server is made available under the terms of the [GNU Affero General
 Public License](http://www.gnu.org/licenses/agpl.html), version 3. See the 
 included `LICENSE` for more details.
