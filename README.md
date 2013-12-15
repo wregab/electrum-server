@@ -1,4 +1,4 @@
-LTCLectrum-server for the LTLectrum client
+LTCLectrum-server for the LTCLectrum client
 =========================================
 
 This is litecoin port of Electrum server
