@@ -72,7 +72,7 @@ def create_config():
         filename = path + 'ltclectrum.conf'
         attempt_read_config(config, filename)
 
-    for bannerfile in ('banner','/etc/electrum.banner'):
+    for bannerfile in ('banner','/etc/ltclectrum.banner'):
         try:
             with open(bannerfile, 'r') as f:
                 config.set('server', 'banner', f.read())
