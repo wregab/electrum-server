@@ -146,7 +146,7 @@ if __name__ == '__main__':
         import setproctitle
         setproctitle.setproctitle('LTCLectrumServer')
     except ImportError:
-        println("Unable to rename process: python module setproctitle unavailable")
+        print("Unable to rename process: python module setproctitle unavailable")
 
     from processor import Dispatcher, print_log
     from backends.irc import ServerProcessor
