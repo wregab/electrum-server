@@ -21,6 +21,9 @@ irc = yes
 #ssl_certfile = /path/to/electrum-server.crt
 #ssl_keyfile = /path/to/electrum-server.key
 
+#useful for running multiple servers on one machine
+rename_process = LTCLectrumServer
+
 # default backend is leveldb (pruning server)
 backend = leveldb
 

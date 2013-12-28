@@ -61,6 +61,7 @@ def create_config():
     config.set('server', 'irc_nick', '')
     config.set('server', 'datadir', '')
     config.set('server', 'testnet', 'no')
+    config.set('server', 'rename_process', 'LTCLectrumServer')
 
     # use leveldb as default
     config.set('server', 'backend', 'leveldb')
@@ -144,7 +145,8 @@ if __name__ == '__main__':
 
     try:
         import setproctitle
-        setproctitle.setproctitle('LTCLectrumServer')
+	newName = config.get('server','rename_process')
+        setproctitle.setproctitle(newName)
     except ImportError:
         print("Unable to rename process: python module setproctitle unavailable")
 
