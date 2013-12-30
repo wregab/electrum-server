@@ -30,13 +30,6 @@ addrtype_litecoin_main=48
 addrtype_litecoin_testnet=111
 addrtype=addrtype_litecoin_main
 
-def init(config):
-	global addrtype
-	if config.get('server','testnet') == "yes":
-		addrtype=addrtype_litecoin_testnet
-	else:
-		addrtype=addrtype_litecoin_main
-
 
 __b58chars = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 __b58base = len(__b58chars)
